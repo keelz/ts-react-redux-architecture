@@ -58,14 +58,17 @@ __* OPINION *__
 
 Whoa! My first opinion in this series! Moving forward, if you see an opinion tag it means I'm going to offer my own "opinion" on a particular subject. You've been warned.
 
-Okay, so regarding directory structure. My first piece of advice when starting any React application is that you "should" start your project with a structure either exactly like or very close to the structure shown here. Below is a list of my personal reasons for each directory/file.
+Okay, so regarding directory structure. My first piece of advice when starting any React application is that you "should" start your project with a structure either exactly like or very close to the structure shown here. If you are able to either start with or re-factor to a structure like the one shown here you will save yourself a lot of frustration later on in project development. Organization and architecture are key fundamental principals of our craft as software engineers and we should spend a significant amount of time applying them!
+
+Here are my pros and cons...
 
 * common directory
-  * provides a namespace for all of our assets! :+1:
+  * provides a namespace for all of our assets! :relieved:
     * css
     * scss
     * images
     * files
+    * and stuff!
   * provides a namespace for organizing string and number constants.
     * string and number literals, oh my! :-1:
     * I smell, code smell! :-1:
