@@ -71,7 +71,7 @@ Here are my pros and cons...
     * and stuff!
   * provides a namespace for organizing string and number constants.
     * string and number literals, oh my! :-1:
-    * I smell, code smell! :-1:
+    * I smell, code smell! :mask:
     * we can code with in-line string and number literals! :-1:
     * try really hard not to code with number literals! :+1:
     * add string and number literals to constant files! :+1:
