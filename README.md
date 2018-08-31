@@ -84,6 +84,11 @@ Okay, so regarding directory structure. My first piece of advice when starting a
     * actions
     * dispatchers
     * state models
+  * provides a namespace for organizing external utilities and helper methods
+    * we can write helper methods directly into our component files! :anguished:
+    * but what about containers? :grimacing:
+    * I know we can write them in reducers! :cold_sweat:
+    * middleware...? :scream:
 
 ### Refactoring The Application Structure
 To produce our app's directory structure we simply create the new architectural sub-directories, move/rename files, and
