@@ -76,9 +76,9 @@ Here are my pros and cons...
     * try really hard not to code with number literals! :+1:
     * add string and number literals to constant files! :+1:
     * refer to string and number literals imported from constant files! :+1:
-  * provides a namespace for organizing data models for API implementations
+  * provides a namespace for organizing API data models
     * We can model API data in JavaScript? :-1:
-    * We can model API data in TypeScript? :+1:
+    * We can model API data in [TypeScript](https://www.typescriptlang.org/)? :+1:
     * Wait, what? We can model API request and response data? :+1:
   * provides a namespace for organizing redux design patters
     * types & interfaces
