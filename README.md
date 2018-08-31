@@ -61,18 +61,22 @@ Whoa! My first opinion in this series! Moving forward, if you see an opinion tag
 Okay, so regarding directory structure. My first piece of advice when starting any React application is that you "should" start your project with a structure either exactly like or very close to the structure shown here. Below is a list of my personal reasons for each directory/file.
 
 * common directory
-  * provides a namespace for all of our assets.
+  * provides a namespace for all of our assets! :+1:
     * css
     * scss
     * images
     * files
   * provides a namespace for organizing string and number constants.
     * string and number literals, oh my! :-1:
-    * I smell code smell! :-1:
+    * I smell, code smell! :-1:
     * we can code with in-line string and number literals! :-1:
     * try really hard not to code with number literals! :+1:
     * add string and number literals to constant files! :+1:
     * refer to string and number literals imported from constant files! :+1:
+  * provides a namespace for organizing data models for API implementations
+    * We can model API data in JavaScript? :-1:
+    * We can model API data in TypeScript? :+1:
+    * Wait, what? We can model API request and response data? :+1:
   * provides a namespace for organizing redux design patters
     * types & interfaces
     * middleware
@@ -80,9 +84,6 @@ Okay, so regarding directory structure. My first piece of advice when starting a
     * actions
     * dispatchers
     * state models
-  * provides a namespace for organizing data models for API implementations
-    * We can model API data in JavaScript? :-1:
-    * We can model API data in TypeScript? :+1:
 
 ### Refactoring The Application Structure
 To produce our app's directory structure we simply create the new architectural sub-directories, move/rename files, and
@@ -120,7 +121,13 @@ When we open the file we should see, dpending on our flavor of [IDE and linting 
 
 When we restructured our application we moved the `src/App.tsx` file to `src/components/App/index.tsx`. To resolve the linting error we will need to provide the import statement with the virtual path to the new file.
 
-__NOTE__ Our application's project root is `/src`.
+__* NOTE *__
+
+Whoa! Our first note! Moving forward if you see the note tag then it means I'm trying to call your attention to something!
+
+Our application's project root is `/src`.
+
+^ that was the note.
 
 ```javascript
 import * as React from 'react';
