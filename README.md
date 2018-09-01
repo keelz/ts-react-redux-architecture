@@ -140,6 +140,7 @@ To get our app running with the new directory structure we will need to modify s
 First, let's take a look at our application starting point.
 ```
 redux-middleware/src/index.tsx
+
 redux-middleware
 |
 |____src
@@ -153,17 +154,13 @@ When we restructured our application we moved the `src/App.tsx` file to `src/com
 
 __* NOTE *__
 
-Whoa! Our first note! Moving forward if you see the note tag then it means I'm trying to call your attention to something!
-
-Our application's project root is `/src`.
-
-^ that was the note.
+There is a gotcha. Take a look at line 4. We are importing a css file that was obviously moved and no longer lives at our project root. We should update that as well while we are here.
 
 ```javascript
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import './common/assets/css/index.css';
 import App from './components/App';
-import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
@@ -172,3 +169,8 @@ ReactDOM.render(
 );
 registerServiceWorker();
 ```
+We changed lines three and four! :star:
+
+__* NOTE *__
+
+Our project root is `src/`. Very important! Don't forget!
