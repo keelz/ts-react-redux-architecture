@@ -252,6 +252,8 @@ We changed our `App` import statement to import from `./index` instead of `./App
 
 ## MISSION ACCOMPLISHED!
 
+![mission accomplished](https://varchitectthoughts.files.wordpress.com/2016/03/mission_accomplished_baby.jpg)
+
 Man, that's a catchy phrase. We should put it on a banner and hang it from an aircraft carrier!
 
 All jokes aside, we did it. At this point I'd take a moment to really appreciate what we have here. Your project probably has a million different requirements and you can probably already start to think about how you might be able to move things around a bit to help you better organize your project's code. That's great! Figure out what works best for you, implement your changes, and refactor often!
