@@ -11,6 +11,8 @@ I will include a repository/branch index here after this repository grows a bit.
 
 ## Master Branch Description
 
+We start at the beginning... because it's the most logical place to start!
+
 This application is a slightly modified out-of-the-box example of a web client application [SPA](https://en.wikipedia.org/wiki/Single-page_application) bootstrapped with [Create React App](https://github.com/facebookincubator/create-react/app) and the [react-scripts-ts](https://github.com/wmonk/create-react-app-typescript) script.
 
 The project README showcases a few simple steps that can be made to modify a freshly bootstraped app to prepare for common design pattern and library implementations including:
