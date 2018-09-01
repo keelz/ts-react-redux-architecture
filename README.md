@@ -191,7 +191,7 @@ __* NOTE *__
 
 > There is a gotcha here. Take a look at the line of your untouched source code that is importing the index css file. We are importing a css file that was obviously moved and no longer lives at our project root. We should update that as well while we are here.
 
-```javascript
+```typescript
 // src/index.tsx
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
@@ -230,7 +230,7 @@ redux-middleware
 
 Let's fix the index file!
 
-```javascript
+```typescript
 // src/components/App/index.tsx
 import * as React from 'react';
 import './App.css';
@@ -260,7 +260,7 @@ We changed line 4 (the logo import) to import from the new `common/assets/img` d
 
 Next, let's fix our App.test
 
-```javascript
+```typescript
 // src/components/App/App.test.tsx
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
