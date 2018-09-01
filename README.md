@@ -168,14 +168,14 @@ __* NOTE *__
 > 
 > You just earned your first :star2:
 
-### Refactoring The Application Code
-To get our app running with the new directory structure we will need to modify some import statements.
+### Refactoring The Application Source Code
+
+Our app is broken! Well, yes... we broke everything when we refactored our app's directory structure and now we need to refactor the source code to include those changes. Let's fix it!
 
 #### Our project's index file is broken!
 
 ```
 redux-middleware/src/index.tsx
-
 redux-middleware
 |
 |____src
@@ -189,7 +189,7 @@ When we restructured our application we moved the `src/App.tsx` file to `src/com
 
 __* NOTE *__
 
-> There is a gotcha here. Take a look at line 4. We are importing a css file that was obviously moved and no longer lives at our project root. We should update that as well while we are here.
+> There is a gotcha here. Take a look at the line of your untouched source code that is importing the index css file. We are importing a css file that was obviously moved and no longer lives at our project root. We should update that as well while we are here.
 
 ```javascript
 // src/index.tsx
