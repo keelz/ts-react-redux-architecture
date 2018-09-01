@@ -93,6 +93,19 @@ Here are my pros and cons...
     * I know we can write them in reducers! :cold_sweat:
     * middleware...? :scream:
 
+The remaining directories:
+```
+redux-middleware
+|
+|____src
+     |____components
+     |
+     |____containers
+     |
+     |____tests
+```
+These are all the directories we are going to need to organize our React, Redux, and Test files! They are REQUIRED for all React applications that matter. That's it!
+
 ### Refactoring The Application Structure
 To produce our app's directory structure we simply create the new architectural sub-directories, move/rename files, and
 touch the single constants file we will need to start developing our app. The full command list to accomplish the changes we are looking for is listed below.
