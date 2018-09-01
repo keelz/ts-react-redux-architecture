@@ -260,4 +260,5 @@ For now you can just run the following and admire a spinning React logo!
 
 ```
 npm run start
+npm run test
 ```
