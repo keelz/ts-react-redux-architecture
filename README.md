@@ -168,6 +168,7 @@ __* NOTE *__
 There is a gotcha. Take a look at line 4. We are importing a css file that was obviously moved and no longer lives at our project root. We should update that as well while we are here.
 
 ```javascript
+// src/index.tsx
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import './common/assets/css/index.css';
