@@ -28,27 +28,36 @@ redux-middleware
      |    registerServiceWorker.ts
      |
      |____common
+     |    |
      |    |____assets
+     |    |    |
      |    |    |____css
-     |    |    |        index.css
-     |    |    |
+     |    |    |    |    index.css
+     |    |    |    |
      |    |    |____img
-     |    |    |        logo.svg
-     |    |    |
+     |    |    |    |    logo.svg
+     |    |    |    |
      |    |____constants
      |    |    |    app.ts
      |    |    |
      |    |____models
      |    |    |
+     |    |    |
      |    |____redux
+     |    |    |
      |    |    |____middleware
      |    |    |
      |    |    |____reducers
-     |    |
+     |    |    |
      |    |____utils
      |    |
      |____components
-     |
+     |    |
+     |    |____App
+     |    |    |    App.css
+     |    |    |    App.test.css
+     |    |    |    Index.tsx
+     |    |    |
      |____containers
      |
      |____tests
@@ -137,7 +146,8 @@ You just earned your first :star2:
 ### Refactoring The Application Code
 To get our app running with the new directory structure we will need to modify some import statements.
 
-First, let's take a look at our application starting point.
+#### Our project's index file is broken!
+
 ```
 redux-middleware/src/index.tsx
 
@@ -174,3 +184,78 @@ We changed lines three and four! :star:
 __* NOTE *__
 
 Our project root is `src/`. Very important! Don't forget!
+
+#### Our project's App component is borken!
+
+```
+redux-middleware/src/components/App
+redux-middleware
+|
+|____src
+     |
+     |____components
+     |    |
+     |    |____App
+     |    |    |    App.css
+     |    |    |    App.test.css
+     |    |    |    Index.tsx
+     |    |    |
+```
+
+Let's fix the index file!
+
+```javascript
+// src/components/App/index.tsx
+import * as React from 'react';
+import './App.css';
+
+import logo from '../../common/assets/img/logo.svg';
+
+class App extends React.Component {
+  public render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.tsx</code> and save to reload.
+        </p>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+We changed line 4 (the logo import) to import from the new `common/assets/img` directory. Brilliant!
+
+Next, let's fix our App.test
+
+```javascript
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import App from './index';
+
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<App />, div);
+  ReactDOM.unmountComponentAtNode(div);
+});
+```
+
+We changed our `App` import statement to import from `./index` instead of `./App` because we moved the old `App.tsx` to `index.tsx` in the previous section.
+
+## MISSION ACCOMPLISHED!
+
+Man, that's a catchy phrase. We should put it on a banner and hang it from an aircraft carrier!
+
+All jokes aside, we did it. At this point I'd take a moment to really appreciate what we have here. Your project probably has a million different requirements and you can probably already start to think about how you might be able to move things around a bit to help you better organize your project's code. That's great! Figure out what works best for you, implement your changes, and refactor often!
+
+For now you can just run the following and admire a spinning React logo!
+
+```
+npm run start
+```
