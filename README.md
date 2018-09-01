@@ -69,7 +69,7 @@ Here are my pros and cons...
     * images
     * files
     * and stuff!
-  * provides a namespace for organizing string and number constants.
+  * provides a namespace for organizing string and number literals.
     * string and number literals, oh my! :-1:
     * I smell, code smell! :mask:
     * we can code with in-line string and number literals! :-1:
@@ -124,6 +124,15 @@ mv App.* components/App
 mv components/App/App.tsx components/App/index.tsx
 mkdir containers tests
 ```
+
+__* NOTE *__
+
+Let's stop here and admire what we've accomplished already. With a handfull of very simple cli commands we have done the following:
+
+1. download and configure a base React, TypeScript application!
+2. setup our project to implement the most common design patterns and libraries!
+
+You just earned your first :star2:
 
 ### Refactoring The Application Code
 To get our app running with the new directory structure we will need to modify some import statements.
