@@ -30,7 +30,7 @@ To bootstrap our application we will lean on the utility provided to us by [Crea
 
 __* OPINION *__
 
-Create React App offers us irreplaceable utility. Once upon a time we (JavaScript Engineers) spent hours, days, and sometimes weeks setting up and bootstrapping our apps. We used nomenclature like "tooling" to describe the seemlessly endless nightmare of preparing our apps to work with the latest distributions of JavaScript and organize our source code, and the new words made us feel better about the nightmare. Today, we can lean on utilities to reduce the "fatigue" of preparation down to seconds. With a simple cli command we can request the framework we want and watch as the base application is configured for us. This can't be a bad thing!
+> Create React App offers us irreplaceable utility. Once upon a time we (JavaScript Engineers) spent hours, days, and sometimes weeks setting up and bootstrapping our apps. We used nomenclature like "tooling" to describe the seemlessly endless nightmare of preparing our apps to work with the latest distributions of JavaScript and organize our source code, and the new words made us feel better about the nightmare. Today, we can lean on utilities to reduce the "fatigue" of preparation down to seconds. With a simple cli command we can request the framework we want and watch as the base application is configured for us. This can't be a bad thing!
 
 To setup our application open your favorite terminal and type in the following command AFTER installing the most recent version of [nodejs](https://nodejs.org/en/).
 
@@ -89,54 +89,56 @@ redux-middleware
 
 __* OPINION *__
 
-Okay, so regarding directory structure. My first piece of advice when starting any React application is that you "should" start your project with a structure either exactly like or very close to the structure shown here. If you are able to either start with or re-factor to a structure like the one shown here you will save yourself a lot of frustration later on in project development. Organization and architecture are key fundamental principals of our craft as software engineers and we should spend a significant amount of time applying them!
-
-Here are my pros and cons...
-
-* common directory
-  * provides a namespace for all of our assets! :relieved:
-    * css
-    * scss
-    * images
-    * files
-    * and stuff!
-  * provides a namespace for organizing string and number literals.
-    * string and number literals, oh my! :-1:
-    * I smell, code smell! :mask:
-    * we can code with in-line string and number literals! :-1:
-    * try really hard not to code with number literals! :+1:
-    * add string and number literals to constant files! :+1:
-    * refer to string and number literals imported from constant files! :+1:
-  * provides a namespace for organizing API data models
-    * We can model API data in JavaScript? :-1:
-    * We can model API data in [TypeScript](https://www.typescriptlang.org/)? :+1:
-    * Wait, what? We can model API request and response data? :+1:
-  * provides a namespace for organizing redux design patters
-    * types & interfaces
-    * middleware
-    * reducers
-    * actions
-    * dispatchers
-    * state models
-  * provides a namespace for organizing external utilities and helper methods
-    * we can write helper methods directly into our component files! :anguished:
-    * but what about containers? :grimacing:
-    * I know we can write them in reducers! :cold_sweat:
-    * middleware...? :scream:
-
-The remaining directories:
-```
-redux-middleware
-|
-|____src
-     |
-     |____components
-     |
-     |____containers
-     |
-     |____tests
-```
-These are all the directories we are going to need to organize our React, Redux, and Test files! They are REQUIRED for all React applications that matter. That's it!
+> Okay, so regarding directory structure. My first piece of advice when starting any React application is that you "should" start your project with a structure either exactly like or very close to the structure shown here. If you are able to either start with or re-factor to a structure like the one shown here you will save yourself a lot of frustration later on in project development. Organization and architecture are key fundamental principals of our craft as software engineers and we should spend a significant amount of time applying them!
+> 
+> Here are my pros and cons...
+> 
+> * common directory
+>   * provides a namespace for all of our assets! :relieved:
+>     * css
+>     * scss
+>     * images
+>     * files
+>     * and stuff!
+>   * provides a namespace for organizing string and number literals.
+>     * string and number literals, oh my! :-1:
+>     * I smell, code smell! :mask:
+>     * we can code with in-line string and number literals! :-1:
+>     * try really hard not to code with number literals! :+1:
+>     * add string and number literals to constant files! :+1:
+>     * refer to string and number literals imported from constant files! :+1:
+>   * provides a namespace for organizing API data models
+>     * We can model API data in JavaScript? :-1:
+>     * We can model API data in [TypeScript](https://www.typescriptlang.org/)? :+1:
+>     * Wait, what? We can model API request and response data? :+1:
+>   * provides a namespace for organizing redux design patters
+>     * types & interfaces
+>     * middleware
+>     * reducers
+>     * actions
+>     * dispatchers
+>     * state models
+>   * provides a namespace for organizing external utilities and helper methods
+>     * we can write helper methods directly into our component files! :anguished:
+>     * but what about containers? :grimacing:
+>     * I know we can write them in reducers! :cold_sweat:
+>     * middleware...? :scream:
+> 
+> The remaining directories:
+> 
+> ```
+> redux-middleware
+> |
+> |____src
+>      |
+>      |____components
+>      |
+>      |____containers
+>      |
+>      |____tests
+> ```
+> 
+> These are all the directories we are going to need to organize our React, Redux, and Test files! They are REQUIRED for all React applications that matter. That's it!
 
 ### Refactoring The Application Structure
 To produce our app's directory structure we simply create the new architectural sub-directories, move/rename files, and
@@ -159,12 +161,12 @@ mkdir containers tests
 
 __* NOTE *__
 
-Let's stop here and admire what we've accomplished already. With a handfull of very simple cli commands we have done the following:
-
-1. download and configure a base React, TypeScript application!
-2. setup our project to implement the most common design patterns and libraries!
-
-You just earned your first :star2:
+> Let's stop here and admire what we've accomplished already. With a handfull of very simple cli commands we have done the following:
+> 
+> * download and configure a base React, TypeScript application!
+> * setup our project to implement the most common design patterns and libraries!
+> 
+> You just earned your first :star2:
 
 ### Refactoring The Application Code
 To get our app running with the new directory structure we will need to modify some import statements.
@@ -187,7 +189,7 @@ When we restructured our application we moved the `src/App.tsx` file to `src/com
 
 __* NOTE *__
 
-There is a gotcha. Take a look at line 4. We are importing a css file that was obviously moved and no longer lives at our project root. We should update that as well while we are here.
+> There is a gotcha here. Take a look at line 4. We are importing a css file that was obviously moved and no longer lives at our project root. We should update that as well while we are here.
 
 ```javascript
 // src/index.tsx
