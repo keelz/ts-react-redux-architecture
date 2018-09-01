@@ -79,7 +79,7 @@ redux-middleware
      |    |
      |    |____App
      |    |    |    App.css
-     |    |    |    App.test.css
+     |    |    |    App.test.tsx
      |    |    |    Index.tsx
      |    |    |
      |____containers
@@ -209,7 +209,7 @@ We changed lines three and four! :star:
 
 __* NOTE *__
 
-Our project root is `src/`. Very important! Don't forget!
+> Our project root is `src/`. Very important! Don't forget!
 
 #### Our project's App component is borken!
 
@@ -223,7 +223,7 @@ redux-middleware
      |    |
      |    |____App
      |    |    |    App.css
-     |    |    |    App.test.css
+     |    |    |    App.test.tsx
      |    |    |    Index.tsx
      |    |    |
 ```
@@ -261,6 +261,7 @@ We changed line 4 (the logo import) to import from the new `common/assets/img` d
 Next, let's fix our App.test
 
 ```javascript
+// src/components/App/App.test.tsx
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './index';
