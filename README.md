@@ -1,9 +1,20 @@
 
 # React TypeScript Architecture
 
+This software repository is a [several part series](https://github.com/keelz/redux-middleware). Each branch of this repository provides specific information, code examples, thoughts, and notes regarding the implementations of different libraries and design patterns common within the [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/) development community.
+
+My motivation for developing this repository originates from a growing community outcry for more. There are countless walkthroughs, blogs, and tutorials showcasing these technologies. What is missing within that endless swirl of information is a repository of information that dives into the deeper concepts of implementations using real-world type examples as source material. My goal is to fill that gap.
+
+After developing several production apps with [TypeScript](https://www.typescriptlang.org/) and the [React](https://reactjs.org/) framework library, I decided to organize my personal notes and experiences into a slightly opinionated library of applications. I will try very hard not to focus too hard on my own opinions, however, many of the design patterns that I will describe within this series are born from opinions of good software development. I humbly ask for your understanding and collaboration!
+
+I will include a repository/branch index here after this repository grows a bit.
+
+## Master Branch Description
+
 This application is a slightly modified out-of-the-box example of a web client application [SPA](https://en.wikipedia.org/wiki/Single-page_application) bootstrapped with [Create React App](https://github.com/facebookincubator/create-react/app) and the [react-scripts-ts](https://github.com/wmonk/create-react-app-typescript) script.
 
-The following example code represents a [TypeScript](https://www.typescriptlang.org/) application developed with the [React](https://reactjs.org/) framework library. The project showcases a few simple steps that can be made to modify the application to prepare for common design pattern and library implementations including:
+The project README showcases a few simple steps that can be made to modify a freshly bootstraped app to prepare for common design pattern and library implementations including:
+
 * [Redux](https://redux.js.org/)
 * [redux-thunk](https://github.com/reduxjs/redux-thunk)
 * [React Router](https://reacttraining.com/react-router/core/guides/philosophy)
@@ -12,12 +23,23 @@ The following example code represents a [TypeScript](https://www.typescriptlang.
 [nodejs](https://nodejs.org/en/)
 
 ## Bootstrap From CLI
+
+To bootstrap our application we will lean on the utility provided to us by [Create React App](https://github.com/facebookincubator/create-react/app).
+
+__* OPINION *__
+
+Create React App offers us irreplaceable utility. Once upon a time we (JavaScript Engineers) spent hours, days, and sometimes weeks setting up and bootstrapping our apps. We used nomenclature like "tooling" to describe the seemlessly endless nightmare of preparing our apps to work with the latest distributions of JavaScript and organize our source code, and the new words made us feel better about the nightmare. Today, we can lean on utilities to reduce the "fatigue" of preparation down to seconds. With a simple cli command we can request the framework we want and watch as the base application is configured for us. This can't be a bad thing!
+
+To setup our application open your favorite terminal and type in the following command AFTER installing the most recent version of [nodejs](https://nodejs.org/en/).
+
 `npx create-react-app redux-middleware --scripts-version=react-scripts-ts`
 
 ## Create The Application Directory Structure
-The following represents the finished state of our application directory (src) structure after creating
-new directories and moving files. The only additional file created during the refactor process is
-`src/common/constants/app.ts` and this was accomplished with a simple `touch` cli command.
+
+After our app finishes bootstrapping we need to configure our app to prepare for future technology implementations. Create React App installs it's base application in an unopinionated manner. As such it leaves us with a `src/` directory that has no organization. We need to remedy this!
+
+The following represents the finished state of our application root directory `src/` after creating
+new directories and moving files.
 
 ### Finished Application Structure
 ```
@@ -64,8 +86,6 @@ redux-middleware
 ```
 
 __* OPINION *__
-
-Whoa! My first opinion in this series! Moving forward, if you see an opinion tag it means I'm going to offer my own "opinion" on a particular subject. You've been warned.
 
 Okay, so regarding directory structure. My first piece of advice when starting any React application is that you "should" start your project with a structure either exactly like or very close to the structure shown here. If you are able to either start with or re-factor to a structure like the one shown here you will save yourself a lot of frustration later on in project development. Organization and architecture are key fundamental principals of our craft as software engineers and we should spend a significant amount of time applying them!
 
