@@ -91,8 +91,8 @@ mv src/App.test.tsx src/tests/App/index.test.tsx
 
 > __* NOTE *__
 >
-> Our project's source code root directory is `ts-react-redux-architecture/src/`. Very important! Don't forget!
-> These articles will refer to our source code root directory as `src/` moving forward.
+> * Our project's source code root directory is `ts-react-redux-architecture/src/`. Very important! Don't forget!
+> * These articles will refer to our source code root directory as `src/` moving forward.
 
 ### Refactored Project Directory Structure
 ```
