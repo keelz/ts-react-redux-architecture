@@ -107,6 +107,7 @@ The remaining directories:
 redux-middleware
 |
 |____src
+     |
      |____components
      |
      |____containers
