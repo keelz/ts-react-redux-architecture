@@ -55,34 +55,43 @@ Open your favorite terminal, make your way to a familiar workspace such as ```~/
 
 `npx create-react-app ts-react-redux-architecture --scripts-version=react-scripts-ts`
 
-__* OPINION *__
-
+> __* OPINION *__
+>
 > Create React App offers us irreplaceable utility. Once upon a time we (JavaScript Engineers) spent hours, days, and sometimes weeks setting up and bootstrapping our apps. We used nomenclature like "tooling" to describe the seemlessly endless nightmare of preparing our apps to work with the latest distributions of JavaScript and organize our source code, and the new words made us feel better about the nightmare. Today, we can lean on utilities to reduce the "fatigue" of preparation down to seconds. With a simple cli command we can request the framework we want and watch as the base application is configured for us. This can't be a bad thing!
 
 ## 1.2 Refactor the Project Directory Structure
 
 After our app finishes bootstrapping we need to configure our app to prepare for future technology implementations. Create React App installs it's base application in an unopinionated manner. As such it leaves us with a `src/` directory that has no organization. We need to remedy this!
 
-In a terminal, from the workspace directory...
+In a terminal, from within the new project directory...
 
 ```
-cd ts-react-redux-architecture/src
-mkdir -p common/assets/css common/assets/img
-mv index.css common/assets/css
-mv logo.svg common/assets/img
-mkdir common/constants
-touch common/constants/app.ts
-mkdir -p common/redux/middleware common/redux/reducers
-mkdir common/models common/utils
-mkdir -p components/App
-mv App.* components/App
-mv components/App/App.tsx components/App/index.tsx
-mkdir containers tests
+mkdir -p src/common/assets/css src/common/assets/img
+mv src/index.css src/common/assets/css/
+mv src/logo.svg src/common/assets/img/
+mkdir -p src/common/constants
+touch src/common/constants/app.ts
+touch src/common/constants/api.ts
+mkdir -p src/common/models
+touch src/common/models/index.ts
+mkdir -p src/common/redux/middleware src/common/redux/reducers
+touch src/common/redux/store.ts
+touch src/common/redux/middleware/index.ts
+touch src/common/redux/reducers/index.ts
+mkdir -p src/common/utils
+touch src/common/utils/index.ts
+mkdir -p src/components/App
+mv src/App.tsx src/components/App/index.tsx
+mv src/App.css src/components/App/App.css
+mkdir -p src/containers/App
+touch src/containers/App/index.ts
+mkdir -p src/tests/App
+mv src/App.test.tsx src/tests/App/index.test.tsx
 ```
 
-__* NOTE *__
-
-> Our project's source code root is `ts-react-redux-architecture/src/`. Very important! Don't forget!
+> __* NOTE *__
+>
+> Our project's source code root directory is `ts-react-redux-architecture/src/`. Very important! Don't forget!
 > These articles will refer to our source code root directory as `src/` moving forward.
 
 ### Refactored Project Directory Structure
@@ -105,18 +114,22 @@ ts-react-redux-architecture
      |    |    |    |
      |    |____constants
      |    |    |    app.ts
+     |    |    |    api.ts
      |    |    |
      |    |____models
-     |    |    |
+     |    |    |    index.ts
      |    |    |
      |    |____redux
      |    |    |
      |    |    |____middleware
-     |    |    |
+     |    |    |    |    index.ts
+     |    |    |    |
      |    |    |____reducers
-     |    |    |
+     |    |    |    |    index.ts
+     |    |    |    |
      |    |____utils
-     |    |
+     |    |    |    index.ts
+     |    |    |
      |____components
      |    |
      |    |____App
@@ -125,12 +138,19 @@ ts-react-redux-architecture
      |    |    |    Index.tsx
      |    |    |
      |____containers
-     |
+     |    |
+     |    |____App
+     |    |    |    index.ts
+     |    |    |
      |____tests
+     |    |
+     |    |____App
+     |    |    |    index.ts
+     |    |    |
 ```
 
-__* OPINION *__
-
+> __* OPINION *__
+>
 > Okay, so regarding directory structure. My first piece of advice when starting any React application is that you "should" start your project with a structure either exactly like or very close to the structure shown here. If you are able to either start with or re-factor to a structure like the one shown here you will save yourself a lot of frustration later on in project development. Organization and architecture are key fundamental principals of our craft as software engineers and we should spend a significant amount of time applying them!
 > 
 > Here are my pros and cons...
@@ -165,9 +185,9 @@ __* OPINION *__
 >     * but what about containers? :grimacing:
 >     * I know we can write them in reducers! :cold_sweat:
 >     * middleware...? :scream:
-> 
+>
 > The remaining directories:
-> 
+>
 > ```
 > ts-react-redux-architecture
 > |
@@ -179,7 +199,7 @@ __* OPINION *__
 >      |
 >      |____tests
 > ```
-> 
+>
 > These are all the directories we are going to need to organize our React, Redux, and Test files! They are REQUIRED for all React applications that matter. That's it!
 
 ## 1.3 Refactor The Application Source Code
@@ -201,8 +221,8 @@ When we open the file we should see, dpending on our flavor of [IDE and linting 
 
 When we restructured our application we moved the `src/App.tsx` file to `src/components/App/index.tsx`. To resolve the linting error we will need to provide the import statement with the virtual path to the new file.
 
-__* NOTE *__
-
+> __* NOTE *__
+>
 > There is a gotcha here. Take a look at the line of your untouched source code that is importing the index css file. We are importing a css file that was obviously moved and no longer lives at our project root. We should update that as well while we are here.
 
 ```typescript
@@ -221,8 +241,8 @@ registerServiceWorker();
 ```
 We changed lines three and four! :star:
 
-__* NOTE *__
-
+> __* NOTE *__
+>
 > Our project root is `src/`. Very important! Don't forget!
 
 ### Our project's App component is borken!
