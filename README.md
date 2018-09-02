@@ -18,6 +18,7 @@ _install, bootstrap, and configure_
 * [1.1 Bootstrap From CLI](#1.1-bootstrap-from-cli)
 * [1.2 Refactor The Project Directory Structure](#1.2-refactor-the-project-directory-structure)
 * [1.3 Refactor The Application Source Code](#1.3-refactor-the-application-source-code)
+* [Mission Accomplished](#mission-accomplished)
 
 ## 1.0 Description
 
@@ -299,13 +300,13 @@ We changed line 4 (the logo import) to import from the new `common/assets/img` d
 >
 > I personally don't like aliased import paths for several reasons. First, they make third party integrations such as enzyme and jest a bit more challenging to setup, and second they assume too much. I like my import statements to be specific and as such I will always use relative paths with my import statements. Also, I won't dive into configuring 3rd party implementations to work with aliases. I feel like the relative paths (although longer) buy us clarity while reducing 3rd party implemenation requirements (win win)!
 
-Next, let's fix our App.test
+Next, let's fix our app's only test file. We moved and renamed `src/App.test.tsx` to `src/tests/App/index.test.tsx` and in doing so we ended up breaking the import statement that's importing the App component. Let's fix it.
 
 ```typescript
-// src/components/App/App.test.tsx
+// src/tests/App/index.test.tsx
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './index';
+import App from '../../components/App/index';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -313,8 +314,6 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 ```
-
-We changed our `App` import statement to import from `./index` instead of `./App` because we moved the old `App.tsx` to `index.tsx` in the previous section.
 
 ## MISSION ACCOMPLISHED!
 
