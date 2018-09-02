@@ -240,6 +240,7 @@ ReactDOM.render(
 );
 registerServiceWorker();
 ```
+
 We changed lines three and four! :star:
 
 > __* NOTE *__
