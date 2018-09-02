@@ -14,13 +14,13 @@ _install, bootstrap, and configure_
 
 ## Branch Index
 
-* [1.0 Description](#1.0-description)
-* [1.1 Bootstrap From CLI](#1.1-bootstrap-from-cli)
-* [1.2 Refactor The Project Directory Structure](#1.2-refactor-the-project-directory-structure)
-* [1.3 Refactor The Application Source Code](#1.3-refactor-the-application-source-code)
+* [1.0 Description](#description)
+* [1.1 Bootstrap From CLI](#bootstrap-from-cli)
+* [1.2 Refactor The Project Directory Structure](#refactor-the-project-directory-structure)
+* [1.3 Refactor The Application Source Code](#refactor-the-application-source-code)
 * [Mission Accomplished](#mission-accomplished)
 
-## 1.0 Description
+## Description
 
 We start at the beginning... because it's the most logical place to start.
 
@@ -48,7 +48,7 @@ We need to create a new [Single Page Application (SPA)](https://en.wikipedia.org
 * [nodejs](https://nodejs.org/en/)
 * [A modern IDE](https://code.visualstudio.com/) and [linting utility](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)
 
-## 1.1 Bootstrap From CLI
+## Bootstrap From CLI
 
 _assuming you already installed nodejs..._
 
@@ -66,7 +66,7 @@ Open your favorite terminal, make your way to a familiar workspace such as ```~/
 >
 > However, all good things cost something! Create React App configures the app source code and project directory from a quasi unopinionated perspective. This means that all of our source code is just dropped into a single directory; `src/`, and that some of our configurations may not necessarily meet acceptance criteria for our project. As engineers it is our responsibility to make endless attempts to control chaos, and in the case of our boilter plate React app, we need to setup an environment conducive to source code reuse, organization, and deployment in a manner that meets our app's acceptance criteria.
 
-## 1.2 Refactor the Project Directory Structure
+## Refactor the Project Directory Structure
 
 After our app finishes bootstrapping we need to configure our app to prepare for future technology implementations. Create React App installs it's base application in an unopinionated manner. As such it leaves us with a `src/` directory that has no organization. We need to remedy this!
 
@@ -209,7 +209,7 @@ ts-react-redux-architecture
 >
 > These are all the directories we are going to need to organize our React, Redux, and Test files! They are REQUIRED for all React applications that matter. That's it!
 
-## 1.3 Refactor The Application Source Code
+## Refactor The Application Source Code
 
 Our app is broken! Well, yes... we broke everything when we refactored our app's directory structure and now we need to refactor the source code to include those changes. Let's fix it!
 
