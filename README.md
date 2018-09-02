@@ -224,7 +224,7 @@ When we restructured our application we moved the `src/App.tsx` file to `src/com
 
 > __* NOTE *__
 >
-> There is a gotcha here. Take a look at the line of your untouched source code that is importing the index css file. We are importing a css file that was obviously moved and no longer lives at our project root. We should update that as well while we are here.
+> There is a gotcha here. Take a look at the line of your untouched source code that is importing the index css file. We are importing a css file that was obviously moved and no longer lives at our project root. We should update that as well while we are here. The gotcha here is that your linter may not catch that the import statement is actually wrong.
 
 ```typescript
 // src/index.tsx
