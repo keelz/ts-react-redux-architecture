@@ -326,7 +326,7 @@ All jokes aside, we did it. At this point I'd take a moment to really appreciate
 
 For now you can just run the following to admire pretty tables and a spinning React logo!
 
-Test our project:
+__Test our project:__
 
 ```
 npm run test -- --coverage
@@ -348,13 +348,13 @@ Time:        2.649s
 Ran all test suites.
 ```
 
-Build our project:
+__Build our project:__
 
 ```
 npm run build
 ```
 
-Start our project:
+__Start our project:__
 
 ```
 npm run start
