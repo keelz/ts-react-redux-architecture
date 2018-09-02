@@ -248,6 +248,7 @@ ReactDOM.render(
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
+
 ```
 
 We changed lines three and four! :star:
@@ -298,6 +299,7 @@ class App extends React.Component {
 }
 
 export default App;
+
 ```
 
 We changed line 4 (the logo import) to import from the new `common/assets/img` directory. Brilliant!
@@ -323,6 +325,7 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
 ```
 
 ## MISSION ACCOMPLISHED!
@@ -334,6 +337,11 @@ Man, that's a catchy phrase. We should put it on a banner and hang it from an ai
 All jokes aside, we did it. At this point I'd take a moment to really appreciate what we have here. Your project probably has a million different requirements and you can probably already start to think about how you might be able to move things around a bit to help you better organize your project's code. That's great! Figure out what works best for you, implement your changes, and refactor often!
 
 For now you can just run the following to admire pretty tables and a spinning React logo!
+
+>__* NOTE *__
+>
+> You will most likely need to initialize your project directory with git before you can successfully run all of the npm scripts that Create React App configured for our new app.
+>
 
 __Test our project:__
 
