@@ -108,6 +108,7 @@ ts-react-redux-architecture
 |____src
      |    index.tsx
      |    registerServiceWorker.ts
+     |    store.ts
      |
      |____common
      |    |
