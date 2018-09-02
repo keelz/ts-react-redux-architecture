@@ -82,6 +82,7 @@ touch src/common/constants/api.ts
 mkdir -p src/common/models
 touch src/common/models/index.ts
 mkdir -p src/common/redux/middleware src/common/redux/reducers
+touch src/common/redux/index.ts
 touch src/common/redux/store.ts
 touch src/common/redux/middleware/index.ts
 touch src/common/redux/reducers/index.ts
@@ -108,7 +109,6 @@ ts-react-redux-architecture
 |____src
      |    index.tsx
      |    registerServiceWorker.ts
-     |    store.ts
      |
      |____common
      |    |
@@ -128,6 +128,8 @@ ts-react-redux-architecture
      |    |    |    index.ts
      |    |    |
      |    |____redux
+     |    |    |    index.ts
+     |    |    |    store.ts
      |    |    |
      |    |    |____middleware
      |    |    |    |    index.ts
