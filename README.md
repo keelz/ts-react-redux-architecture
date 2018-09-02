@@ -257,7 +257,6 @@ ts-react-redux-architecture
      |    |
      |    |____App
      |    |    |    App.css
-     |    |    |    App.test.tsx
      |    |    |    Index.tsx
      |    |    |
 ```
@@ -291,6 +290,14 @@ export default App;
 ```
 
 We changed line 4 (the logo import) to import from the new `common/assets/img` directory. Brilliant!
+
+> __* OPINION *__
+>
+> Bootstrapping our app with Create React App provides us a little utility with import statements. That utitlity comes in the form of a path alias to our application source code root. The effect of the utility allows us to use import like such:
+>
+> ```import logo from 'common/assets/img/logo.svg```
+>
+> I personally don't like aliased import paths for several reasons. First, they make third party integrations such as enzyme and jest a bit more challenging to setup, and second they assume too much. I like my import statements to be specific and as such I will always use relative paths with my import statements. Also, I won't dive into configuring 3rd party implementations to work with aliases. I feel like the relative paths (although longer) buy us clarity while reducing 3rd party implemenation requirements (win win)!
 
 Next, let's fix our App.test
 
