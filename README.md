@@ -56,9 +56,15 @@ Open your favorite terminal, make your way to a familiar workspace such as ```~/
 
 `npx create-react-app ts-react-redux-architecture --scripts-version=react-scripts-ts`
 
+> __* NOTE *__
+>
+> The TL;DR version of Create React App:<br /> It is an npm utility script that downloads a "recommended" configuration for a React boilerplate client application. It creates a directory, installs boilterplate configuration files, and runs npm to download app dependencies and source code. After the script is finished the developer has a working boilterplate React application that requires little to no additional configuration. The developer can theoretically begin development immediately.
+
 > __* OPINION *__
 >
 > Create React App offers us irreplaceable utility. Once upon a time we (JavaScript Engineers) spent hours, days, and sometimes weeks setting up and bootstrapping our apps. We used nomenclature like "tooling" to describe the seemlessly endless nightmare of preparing our apps to work with the latest distributions of JavaScript and organize our source code, and the new words made us feel better about the nightmare. Today, we can lean on utilities to reduce the "fatigue" of preparation down to seconds. With a simple cli command we can request the framework we want and watch as the base application is configured for us. This can't be a bad thing!
+>
+> However, all good things cost something! Create React App configures the app source code and project directory from a quasi unopinionated perspective. This means that all of our source code is just dropped into a single directory; `src/`, and that some of our configurations may not necessarily meet acceptance criteria for our project. As engineers it is our responsibility to make endless attempts to control chaos, and in the case of our boilter plate React app, we need to setup an environment conducive to source code reuse, organization, and deployment in a manner that meets our app's acceptance criteria.
 
 ## 1.2 Refactor the Project Directory Structure
 
@@ -152,10 +158,10 @@ ts-react-redux-architecture
 
 > __* OPINION *__
 >
-> Okay, so regarding directory structure. My first piece of advice when starting any React application is that you "should" start your project with a structure either exactly like or very close to the structure shown here. If you are able to either start with or re-factor to a structure like the one shown here you will save yourself a lot of frustration later on in project development. Organization and architecture are key fundamental principals of our craft as software engineers and we should spend a significant amount of time applying them!
-> 
+> Okay, so regarding directory structure. My first piece of advice when starting any React application is that you "should" start your project with a structure either exactly like or very close to the structure shown here. If you are able to either start with or re-factor to a structure like the one shown here you will save yourself a lot of frustration later on in project development. Organization and architecture are key fundamental principals of our craft and we should spend a significant amount of time applying them!
+>
 > Here are my smelly bananas...
-> 
+>
 > * common directory
 >   * provides a namespace for all of our assets! :relieved:
 >     * css
