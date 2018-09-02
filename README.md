@@ -154,7 +154,7 @@ ts-react-redux-architecture
 >
 > Okay, so regarding directory structure. My first piece of advice when starting any React application is that you "should" start your project with a structure either exactly like or very close to the structure shown here. If you are able to either start with or re-factor to a structure like the one shown here you will save yourself a lot of frustration later on in project development. Organization and architecture are key fundamental principals of our craft as software engineers and we should spend a significant amount of time applying them!
 > 
-> Here are my pros and cons...
+> Here are my smelly bananas...
 > 
 > * common directory
 >   * provides a namespace for all of our assets! :relieved:
