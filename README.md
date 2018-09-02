@@ -9,7 +9,7 @@ After developing several production apps with [TypeScript](https://www.typescrip
 
 ## Repository Index
 
-* [Master Branch](https://github.com/keelz/ts-react-redux-architecture#1.3-refactor-the-application-source-code)<br />
+* [Master Branch](https://github.com/keelz/ts-react-redux-architecture#react-typescript-architecture)<br />
 _install, bootstrap, and configure_
 
 ## Branch Index
