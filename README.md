@@ -316,7 +316,7 @@ Next, let's fix our app's only test file. We moved and renamed `src/App.test.tsx
 // src/tests/App/index.test.tsx
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from '../../../components/App/index';
+import App from '../../components/App/index';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
