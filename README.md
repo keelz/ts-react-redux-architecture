@@ -324,10 +324,35 @@ Man, that's a catchy phrase. We should put it on a banner and hang it from an ai
 
 All jokes aside, we did it. At this point I'd take a moment to really appreciate what we have here. Your project probably has a million different requirements and you can probably already start to think about how you might be able to move things around a bit to help you better organize your project's code. That's great! Figure out what works best for you, implement your changes, and refactor often!
 
-For now you can just run the following and admire a spinning React logo!
+For now you can just run the following to admire pretty tables and a spinning React logo!
 
+Test our project:
 ```
-npm run test
 npm run test -- --coverage
+
+---------------------------|----------|----------|----------|----------|-------------------|
+File                       |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+---------------------------|----------|----------|----------|----------|-------------------|
+All files                  |       18 |        0 |    11.76 |    16.33 |                   |
+ src                       |        0 |        0 |        0 |        0 |                   |
+  index.tsx                |        0 |      100 |      100 |        0 |    1,2,3,4,5,7,11 |
+  registerServiceWorker.ts |        0 |        0 |        0 |        0 |... 17,118,119,120 |
+ src/components/App        |      100 |      100 |      100 |      100 |                   |
+  index.tsx                |      100 |      100 |      100 |      100 |                   |
+---------------------------|----------|----------|----------|----------|-------------------|
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        2.649s
+Ran all test suites.
+```
+
+Start our project:
+```
 npm run start
+```
+
+Build our project:
+```
+npm run build
 ```
