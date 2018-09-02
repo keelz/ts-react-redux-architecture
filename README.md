@@ -327,6 +327,7 @@ All jokes aside, we did it. At this point I'd take a moment to really appreciate
 For now you can just run the following and admire a spinning React logo!
 
 ```
-npm run start
 npm run test
+npm run test -- --coverage
+npm run start
 ```
