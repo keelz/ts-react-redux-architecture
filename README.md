@@ -13,7 +13,7 @@ After developing several production apps with [TypeScript](https://www.typescrip
 _install, bootstrap, and configure_
 
 * [Bootstrapping Redux](#bootstrapping-redux)<br />
-_install, configure, and test a redux implmentation
+_install, configure, and test a redux implmentation_
 
 ## Branch Index
 
