@@ -12,7 +12,7 @@ After developing several production apps with [TypeScript](https://www.typescrip
 * [Master Branch](https://github.com/keelz/ts-react-redux-architecture#react-typescript-architecture)<br />
 _install, bootstrap, and configure_
 
-* [Bootstrapping Redux](#bootstrapping-redux)<br />
+* [Bootstrapping Redux](https://github.com/keelz/ts-react-redux-architecture/tree/1.0.1-bootstrapping-redux#bootstrapping-redux)<br />
 _install, configure, and test a redux implmentation_
 
 ## Branch Index
