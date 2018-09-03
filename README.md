@@ -1,5 +1,5 @@
 
-# React TypeScript Architecture
+# TypeScript, React, Redux... Architecture
 
 This software repository is a [several part series](https://github.com/keelz/ts-react-redux-architecture). Each branch of this repository provides specific information, code examples, thoughts, and notes regarding the implementations of different libraries and design patterns common within the [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/) development community.
 
