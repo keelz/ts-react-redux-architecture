@@ -168,5 +168,49 @@ Ran all test suites.
 >
 > All other Jest configuration will require that the app be ejected before they can be applied.
 
+That's it! Our `package.json` file should now look similar to this:
+
+```json
+{
+  "name": "redux-middleware",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "react-scripts-ts build",
+    "coverage": "react-scripts-ts test --env=jsdom --coverage",
+    "eject": "react-scripts-ts eject",
+    "start": "react-scripts-ts start",
+    "test": "react-scripts-ts test --env=jsdom"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/common/constants/**/*.{ts,tsx}",
+      "src/common/models/**/*.{ts,tsx}",
+      "src/common/redux/middleware/**/*.{ts,tsx}",
+      "src/common/redux/reducers/**/*.{ts,tsx}",
+      "src/common/utils/**/*.{ts,tsx}",
+      "src/components/**/*.{ts,tsx}",
+      "src/containers/**/*.{ts,tsx}"
+    ],
+    "coverageReporters": [
+      "cobertura",
+      "text-summary"
+    ]
+  },
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts-ts": "2.17.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "@types/node": "^10.9.4",
+    "@types/react": "^16.4.13",
+    "@types/react-dom": "^16.0.7",
+    "typescript": "^3.0.3"
+  }
+}
+```
+
 ## TSLint Configuration
 

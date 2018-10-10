@@ -11,13 +11,13 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/components/**/*.{ts,tsx}",
-      "src/containers/**/*.{ts,tsx}",
       "src/common/constants/**/*.{ts,tsx}",
       "src/common/models/**/*.{ts,tsx}",
       "src/common/redux/middleware/**/*.{ts,tsx}",
       "src/common/redux/reducers/**/*.{ts,tsx}",
-      "src/common/utils/**/*.{ts,tsx}"
+      "src/common/utils/**/*.{ts,tsx}",
+      "src/components/**/*.{ts,tsx}",
+      "src/containers/**/*.{ts,tsx}"
     ],
     "coverageReporters": [
       "cobertura",
