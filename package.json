@@ -2,16 +2,32 @@
   "name": "redux-middleware",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "build": "react-scripts-ts build",
+    "coverage": "react-scripts-ts test --env=jsdom --coverage",
+    "eject": "react-scripts-ts eject",
+    "start": "react-scripts-ts start",
+    "test": "react-scripts-ts test --env=jsdom"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.{ts,tsx}",
+      "src/containers/**/*.{ts,tsx}",
+      "src/common/constants/**/*.{ts,tsx}",
+      "src/common/models/**/*.{ts,tsx}",
+      "src/common/redux/middleware/**/*.{ts,tsx}",
+      "src/common/redux/reducers/**/*.{ts,tsx}",
+      "src/common/utils/**/*.{ts,tsx}"
+    ],
+    "coverageReporters": [
+      "cobertura",
+      "text-summary"
+    ]
+  },
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts-ts": "2.17.0"
-  },
-  "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",
