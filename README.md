@@ -214,3 +214,87 @@ That's it! Our `package.json` file should now look similar to this:
 
 ## TSLint Configuration
 
+Okay, now that we have our `package.json` file setup, let's take a look at our `tslint.json` and `tsconfig.json` files. Arguably, our most powerful tool while developing a React application with TypeScript is [TSLint](https://palantir.github.io/tslint/). Unfortunately, a default setup with `create-react-app` doesn't offer us a lot of utility in the way of best coding practices. Let's fix it!
+
+### tslint.json
+
+Okay, let's go grab a really good starting point. Personally, I've been working with airbnb linting rules for a while and I enjoy them. Let's install the airbnb package for tslint.
+
+```
+$: npm install -D tslint-config-airbnb
+```
+
+Great! Now we have to tell tslint to use our new configuration. Open the `tslint.json` file and make the following changes:
+
+```json
+{
+  "extends": ["tslint-config-airbnb"],
+  "rules": {
+    "import-name": false,
+    "ordered-imports": false,
+    "semicolon": [true, "always"],
+    "ter-arrow-parens": false,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": {
+          "arrays": "always",
+          "objects": "always",
+          "functions": "never",
+          "typeLiterals": "ignore"
+        }
+      }
+    ]
+  },
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js"
+    ]
+  }
+}
+```
+
+1. We changed the `extends` value to `["tslint-config-airbnb"]`
+2. We added a `rules` property under the `extends` property.
+
+> __*NOTE*__
+>
+> You can read more about tslint configuration rules [here](https://palantir.github.io/tslint/rules/). The rules that I have set here make development tight while allowing for some sanity flexibility. I definitely recommend reading up on each rule to see what it actually does and it wouldn't hurt to consume the entire rule set to see if there are any you prefer.
+
+### tsconfig.json
+
+Okay, we need to setup our project to use Enzyme and in preparation for doing so we need to make a small change to our `tsconfig.json` file located at the project root. Open the file and remove the `"src/setupTests.ts"` line from the `exclude` list (line 28ish). The end result should look similar to the following:
+
+```json
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "lib": ["es6", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "outDir": "build/dist",
+    "rootDir": "src",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es5"
+  },
+  "exclude": [
+    "acceptance-tests",
+    "build",
+    "jest",
+    "node_modules",
+    "scripts",
+    "webpack"
+  ]
+}
+```

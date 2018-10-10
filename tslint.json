@@ -1,5 +1,22 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": ["tslint-config-airbnb"],
+  "rules": {
+    "import-name": false,
+    "ordered-imports": false,
+    "semicolon": [true, "always"],
+    "ter-arrow-parens": false,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": {
+          "arrays": "always",
+          "objects": "always",
+          "functions": "never",
+          "typeLiterals": "ignore"
+        }
+      }
+    ]
+  },
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
