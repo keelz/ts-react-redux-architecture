@@ -23,8 +23,8 @@ _install, configure, and test a redux implmentation_
 * [1.0 Description](#environment-setup)
 * [1.1 Package Configuration](#package-configuration)
 * [1.2 TSLint Configuration](#tslint-configuration)
-* [1.3 Enzyme Install & Config](#enzyme-install-&-config)
-* [FINISHED](#finished)
+* [1.3 Enzyme Install and Config](#enzyme-install-and-config)
+* [1.4 Environment File](#environment-file)
 
 ## Environment Setup
 
@@ -301,7 +301,7 @@ Okay, we need to setup our project to use Enzyme and in preparation for doing so
 }
 ```
 
-## Enzyme Install & Config
+## Enzyme Install and Config
 
 Our environment is looking a little better, awesome! Let's install and configure Enzyme.
 
