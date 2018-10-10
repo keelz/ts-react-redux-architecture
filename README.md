@@ -26,7 +26,7 @@ _install, configure, and test a redux implmentation_
 * [1.3 Refactor The Application Source Code](#refactor-the-application-source-code)
 * [Mission Accomplished](#mission-accomplished)
 
-## Description
+## Bootstrapping Redux
 
 We start at the beginning... because it's the most logical place to start.
 
