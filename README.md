@@ -22,7 +22,9 @@ _install, configure, and test a redux implmentation_
 
 * [1.0 Description](#environment-setup)
 * [1.1 Package Configuration](#package-configuration)
-* [1.1 TSLint Configuration](#tslint-configuration)
+* [1.2 TSLint Configuration](#tslint-configuration)
+* [1.3 Enzyme Install & Config](#enzyme-install-&-config)
+* [FINISHED](#finished)
 
 ## Environment Setup
 
@@ -297,4 +299,104 @@ Okay, we need to setup our project to use Enzyme and in preparation for doing so
     "webpack"
   ]
 }
+```
+
+## Enzyme Install & Config
+
+Our environment is looking a little better, awesome! Let's install and configure Enzyme.
+
+### Installation
+
+Okay, so the first pitfall you're going to run into while setting up enzyme with React is that it currently requires an Adapter to work with React. You'll need to install the adapter in addition to the base module. Also, we are going to install a json converter to help us with snapshot tests. Let's do it!
+
+```
+$: npm install -D enzyme enzyme-adapter-react-16 enzyme-to-json @types/enzyme @types/enzyme-adapter-react-16
+```
+
+> __*NOTE*__
+>
+> Notice that we used the `-D` option with `npm install`. This is a shorthand flag telling npm to install the following packages as development dependencies. This is a good practice for deployment. We don't want to install our development dependencies on a production environment!
+>
+> __*NOTE*__
+>
+> Because we are using TypeScript we need to pay special attention while installing npm packages. Most npm packages are starting to be deployed with a Types file for TypeScript but for those that don't we have to install them manually. We do this here for both `enzyme` and `enzyme-adapter-react-16`.
+
+### Configuration
+
+Now that we have Enzyme installed, we need to setup our test environment to use our adapater for each test. We can do this by adding a `setupTests.ts` file in the `src/` directory. Open your editor and add a new file at `src/setupTests.ts` and add the following content:
+
+```TypeScript
+// src/setupTests.ts
+import * as enzyme from 'enzyme';
+import * as Adapter from 'enzyme-adapter-react-16';
+
+enzyme.configure({ adapter: new Adapter() });
+```
+
+> __*NOTE*__
+>
+> A create-react-app application with Jest is configured to run `src/setupTests.ts` before running each test file. This is where we can add gobal dependencies for our test suite and it is most appropriate to setup the Enzyme adapter here.
+
+### Our First Test
+
+Okay, now that we have Enzyme installed and configured we need to update our only test file. Open your editor and change the test file to match the following:
+
+```TypeScript
+// src/tests/components/App/index.tst.tsx
+import * as React from 'react';
+import * as enzyme from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
+import App from '../../../components/App';
+
+describe('App', () => {
+  describe('snapshot', () => {
+    it('renders correctly', () => {
+      const tree = enzyme.shallow(<App />);
+      expect(shallowToJson(tree)).toMatchSnapshot();
+    });
+  });
+});
+```
+
+*What did we do?*
+
+Well, the first thing to notice at that we are now importing `enzyme` and `shallowToJson` from `enzyme-to-json`. Next, we wrapped up our tests in a nice little `describe` routine for our component. Finally, we created a `describe` routine for our `snapshot` tests and modified the test to use `enzyme` and `shallow-to-json` to capture a snapshot.
+
+### Results, Results, Results
+
+All done! At this point we have a nice boilerplate app configured to run a kick-ass test framework employing some of the coolest linting rules. Good job!
+
+```
+$: npm run coverage
+```
+
+Results
+```
+ PASS  src\tests\components\App\index.test.tsx
+  App
+    snapshot
+      √ renders correctly (10ms)
+
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 9/9 )
+Branches     : 100% ( 0/0 )
+Functions    : 100% ( 2/2 )
+Lines        : 100% ( 8/8 )
+================================================================================
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   1 passed, 1 total
+Time:        8.367s
+Ran all test suites.
+```
+
+## Environment File
+
+Okay, the last thing we should do is prevent our app from opening a browser every time we run it. This is totally optional but I feel like if I want my browser open I'll choose the browser I want to open and not rely on React to do it for me.
+
+Add a `.env` file to the prject root with the following content:
+
+```
+BROWSER=none
 ```

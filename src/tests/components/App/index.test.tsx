@@ -1,9 +1,14 @@
+// src/tests/components/App/index.tst.tsx
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as enzyme from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 import App from '../../../components/App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('App', () => {
+  describe('snapshot', () => {
+    it('renders correctly', () => {
+      const tree = enzyme.shallow(<App />);
+      expect(shallowToJson(tree)).toMatchSnapshot();
+    });
+  });
 });
