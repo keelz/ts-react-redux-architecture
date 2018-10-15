@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-flexbox-grid": "^2.1.2",
     "react-scripts-ts": "2.17.0"
   },
   "scripts": {
@@ -14,9 +15,11 @@
     "start": "npm-run-all -p watch:css start-js",
     "build": "npm run build:css && react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
+    "postinstall": "(cd node_modules/react-flexbox-grid && npm install && npm run build)",
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.6",
     "@types/jest": "^23.3.1",
     "@types/node": "^10.9.4",
     "@types/react": "^16.4.13",
